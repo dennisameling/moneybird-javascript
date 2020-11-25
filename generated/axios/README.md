@@ -1,34 +1,42 @@
-## moneybird-axios
+# moneybird-axios
 
-This package provides a TypeScript/JavaScript client for Moneybird and utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
+This package provides a TypeScript/JavaScript client for the Moneybird API and utilizes [axios](https://github.com/axios/axios).
 
-Environment
-* Node.js
-* Webpack
-* Browserify
+It can be used in both TypeScript and JavaScript. In TypeScript, you can benefit from things like type hints.
 
-Language level
-* ES5 - you must have a Promises/A+ library installed
-* ES6
-
-Module system
-* CommonJS
-* ES6 module system
-
-It can be used in both TypeScript and JavaScript. In TypeScript, the definition should be automatically resolved via `package.json`. ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
-
-### Installing
+## Installation
 
 Navigate to the folder of your consuming project and run the following command to install the package:
 
-```
+```shell
 npm install moneybird-axios --save
+```
+
+## Usage
+
+```TypeScript
+import { ContactsApi } from 'moneybird-axios';
+
+const contactsApi = new ContactsApi({
+    accessToken: 'YOUR_TOKEN',
+    basePath: 'https://moneybird.com/api/v2/{ADMINISTRATION_ID}'
+});
+
+contactsApi.getContacts().then(response => {
+    const contacts = response.data;
+    for (let contact of contacts) {
+        console.log(`Found contact: ${contact.firstname} ${contact.lastname}, ID ${contact.id}`);
+    }
+}).catch(e => {
+    console.error(`Error: ${e}`);
+});
 ```
 
 ### Building
 
-To build and compile the typescript sources to javascript use:
-```
+To build and compile the TypeScript sources to JavaScript, use:
+
+```shell
 npm install
 npm run build
 ```
