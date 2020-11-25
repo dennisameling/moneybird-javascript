@@ -1,13 +1,14 @@
 {
   "name": "moneybird-javascript",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "JavaScript/TypeScript library for the Moneybird API (moneybird.com)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "openapi-generator-cli generate -i https://raw.githubusercontent.com/dennisameling/moneybird-openapi/main/moneybird-openapi.yaml --skip-validate-spec",
-    "generate:axios": "npm run generate -- -g typescript-axios -o generated/axios --additional-properties=npmName=moneybird-axios,npmVersion=1.0.0",
-    "generate:angular": "npm run generate -- -g typescript-angular -o generated/angular --additional-properties=npmName=moneybird-angular,npmVersion=1.0.0"
+    "generate:axios": "npm run generate -- -g typescript-axios -o generated/axios --additional-properties=npmName=moneybird-axios,npmVersion=0.0.1",
+    "generate:angular": "npm run generate -- -g typescript-angular -o generated/angular --additional-properties=npmName=moneybird-angular,npmVersion=0.0.1,apiModulePrefix=Moneybird",
+    "generate:all": "npm run generate:axios"
   },
   "repository": {
     "type": "git",
