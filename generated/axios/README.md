@@ -1,4 +1,4 @@
-## moneybird-axios@1.0.0
+## moneybird-axios
 
 This package provides a TypeScript/JavaScript client for Moneybird and utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
