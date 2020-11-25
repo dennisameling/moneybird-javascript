@@ -14,11 +14,19 @@
     "build": "tsc --outDir dist/",
     "prepublishOnly": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennisameling/moneybird-javascript.git"
+  },
   "dependencies": {
     "axios": "^0.19.2"
   },
   "devDependencies": {
     "@types/node": "^12.11.5",
     "typescript": "^3.6.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/dennisameling/moneybird-javascript/issues"
+  },
+  "homepage": "https://github.com/dennisameling/moneybird-javascript#readme"
 }
