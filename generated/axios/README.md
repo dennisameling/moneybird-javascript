@@ -15,18 +15,17 @@ npm install moneybird-axios --save
 ## Usage
 
 ```TypeScript
-import { ContactsApi } from 'moneybird-axios';
+import { AdministrationsApi, Configuration } from 'moneybird-axios';
 
-const contactsApi = new ContactsApi({
-    accessToken: 'YOUR_TOKEN',
-    basePath: 'https://moneybird.com/api/v2/{ADMINISTRATION_ID}'
+const administrationsApi = new AdministrationsApi(<Configuration>{
+    accessToken: 'YOUR_TOKEN'
 });
 
-contactsApi.getContacts().then(response => {
-    const contacts = response.data;
-    for (let contact of contacts) {
-        console.log(`Found contact: ${contact.firstname} ${contact.lastname}, ID ${contact.id}`);
-    }
+administrationsApi.getAdministrations().then(response => {
+    const administrations = response.data;
+    administrations.forEach(administration => {
+        console.log(`Found administration: ${administration.name}`);
+    });
 }).catch(e => {
     console.error(`Error: ${e}`);
 });
